@@ -24,7 +24,7 @@ function Header() {
       >
         <Icon className="search" size="3xl" color="black" />
         <input
-          className="flex-grow px-5 text-base bg-transparent outline-none"
+          className="flex-grow px-5 text-base bg-transparent outline-none text-white"
           type="text"
           placeholder="Search"
         />
@@ -43,7 +43,7 @@ function Header() {
 
       <img
         loading="lazy"
-        className="cursor-pointer h-12 w-12 rounded-full ml-2"
+        className="hidden cursor-pointer h-12 w-12 rounded-full ml-2"
         src="https://scontent-dub4-1.xx.fbcdn.net/v/t1.6435-9/120121042_786306675542641_3583119623868269962_n.jpg?_nc_cat=109&_nc_rgb565=1&ccb=1-3&_nc_sid=84a396&_nc_ohc=f2eHv9br5KkAX8Gh6aA&_nc_ht=scontent-dub4-1.xx&oh=5dcc567e2a276b00e9bd5f62a5c3821a&oe=60F20E57"
         alt=""
       />
