@@ -9,7 +9,7 @@ const firebaseConfig = {
   appId: "1:311932049190:web:5441c84002bf7ceed153e7",
 };
 
-const app = !firebase.app.length
+const app = !firebase.apps.length
   ? firebase.initializeApp(firebaseConfig)
   : firebase.app();
 
