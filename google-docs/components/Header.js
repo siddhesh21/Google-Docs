@@ -4,7 +4,7 @@ import Icon from "@material-tailwind/react/Icon";
 
 function Header() {
   return (
-    <div className="sticky top-0 z-50 flex items-center px-4 py-2 shadow-md bg-white">
+    <header className="sticky top-0 z-50 flex items-center px-4 py-2 shadow-md bg-white">
       <Button
         color="gray"
         buttonType="outline"
@@ -47,7 +47,7 @@ function Header() {
         src="https://scontent-dub4-1.xx.fbcdn.net/v/t1.6435-9/120121042_786306675542641_3583119623868269962_n.jpg?_nc_cat=109&_nc_rgb565=1&ccb=1-3&_nc_sid=84a396&_nc_ohc=f2eHv9br5KkAX8Gh6aA&_nc_ht=scontent-dub4-1.xx&oh=5dcc567e2a276b00e9bd5f62a5c3821a&oe=60F20E57"
         alt=""
       />
-    </div>
+    </header>
   );
 }
 
