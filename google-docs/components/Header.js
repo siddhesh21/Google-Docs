@@ -4,7 +4,7 @@ import Icon from "@material-tailwind/react/Icon";
 
 function Header() {
   return (
-    <header className="sticky top-0 z-50 flex items-center px-4 py-2 shadow-md bg-white">
+    <header className="sticky top-0 z-50 flex items-center px-4 py-2 shadow-md bg-black">
       <Button
         color="gray"
         buttonType="outline"
@@ -19,7 +19,7 @@ function Header() {
       <h1 className="ml-2 text-gray-700 text-2xl">Docs</h1>
 
       <div
-        className="mx-5 md:mx-20 flex flex-grow items-center px-5 py-2 bg-gray-100 
+        className="mx-5 md:mx-20 flex flex-grow items-center px-5 py-2 bg-black 
       text-gray-600 rounded-lg focus-within:text-gray-600 focus-within:shadow-md"
       >
         <Icon className="search" size="3xl" color="black" />
