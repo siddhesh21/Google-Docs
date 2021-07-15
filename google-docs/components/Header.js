@@ -27,7 +27,8 @@ function Header() {
       >
         <Icon className="search" size="3xl" color="black" />
         <input
-          className="flex-grow px-5 text-base bg-transparent outline-none text-white"
+          className="flex-grow px-5 text-base bg-transparent outline-none 
+          text-white"
           type="text"
           placeholder="Search"
         />
@@ -58,4 +59,3 @@ function Header() {
 export default Header;
 
 // https://material-tailwind.com/documentation/react/buttons/filled
-// 2:26:53

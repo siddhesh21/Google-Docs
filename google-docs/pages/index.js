@@ -6,11 +6,49 @@ import Icon from "@material-tailwind/react/Icon";
 import Image from "next/image";
 import { getSession, useSession } from "next-auth/client";
 import Login from "/components/Login";
+import { useState } from "react";
+import Modal from "@material-tailwind/react/Modal";
+import ModalBody from "@material-tailwind/react/ModalBody";
+import ModalFooter from "@material-tailwind/react/ModalFooter";
 
 export default function Home() {
   const [session] = useSession();
+  const [showModal, setShowModal] = useState(false);
+  const [input, setInput] = useState("");
 
   if (!session) return <Login />;
+
+  const createDocument = () => {};
+
+  const modal = (
+    <Modal size="sm" active={showModal} toggler={() => setShowModal(false)}>
+      <ModalBody>
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          type="text"
+          className="outline-none w-full"
+          placeholder="Enter name of document..."
+          onKeyDown={(e) => e.key === "Enter" && createDocument()}
+        />
+      </ModalBody>
+
+      <ModalFooter>
+        <Button
+          color="purple"
+          buttonType="link"
+          ripple="dark"
+          onClick={(e) => setShowModal(false)}
+        >
+          Cancel
+        </Button>
+
+        <Button color="purple" onClick={createDocument} ripple="light">
+          Create
+        </Button>
+      </ModalFooter>
+    </Modal>
+  );
 
   return (
     <div className="w-full h-screen">
@@ -19,6 +57,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      {modal}
 
       <section className="bg-[#000] pb-10 px-10">
         <div className="max-w-3xl mx-auto">
@@ -37,6 +76,7 @@ export default function Home() {
           </div>
           <div>
             <div
+              onClick={() => setShowModal(true)}
               className="relative h-52 w-40 border-4 cursor-pointer
             hover:border-purple-400"
             >
