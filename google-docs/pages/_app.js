@@ -1,5 +1,5 @@
 import "tailwindcss/tailwind.css";
-// import "../styles/global.css";
+
 import { ThemeProvider } from "next-themes";
 import "@material-tailwind/react/tailwind.css";
 import Head from "next/head";
