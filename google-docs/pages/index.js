@@ -10,6 +10,8 @@ import { useState } from "react";
 import Modal from "@material-tailwind/react/Modal";
 import ModalBody from "@material-tailwind/react/ModalBody";
 import ModalFooter from "@material-tailwind/react/ModalFooter";
+import { db } from "../firebase";
+import firebase from "firebase";
 
 export default function Home() {
   const [session] = useSession();
@@ -18,7 +20,17 @@ export default function Home() {
 
   if (!session) return <Login />;
 
-  const createDocument = () => {};
+  const createDocument = () => {
+    if (!input) return;
+
+    db.collection("userDocs").doc(session.user.mail).collection("docs").add({
+      fileName: input,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+
+    setInput("");
+    setShowModal(false);
+  };
 
   const modal = (
     <Modal size="sm" active={showModal} toggler={() => setShowModal(false)}>
@@ -27,7 +39,7 @@ export default function Home() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           type="text"
-          className="outline-none w-full"
+          className="outline-none w-full bg-white text-black"
           placeholder="Enter name of document..."
           onKeyDown={(e) => e.key === "Enter" && createDocument()}
         />
@@ -105,5 +117,3 @@ export async function getServerSideProps(context) {
 
   return { props: { session } };
 }
-
-// flex flex-col items-center justify-center min-h-screen py-2
