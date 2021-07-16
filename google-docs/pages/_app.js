@@ -1,5 +1,5 @@
 import "tailwindcss/tailwind.css";
-
+import "../styles.css";
 import { ThemeProvider } from "next-themes";
 import "@material-tailwind/react/tailwind.css";
 import Head from "next/head";
@@ -24,3 +24,6 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+
+
+
